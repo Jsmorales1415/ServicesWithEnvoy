@@ -13,7 +13,10 @@ This solution requires you to have the following componentes in your machine:
 - [Docker](https://www.docker.com/get-started)
 - [.NETCORE](https://docs.microsoft.com/en-us/dotnet/)
 - [Visual Studio](https://visualstudio.microsoft.com/es/) [Recommended]
-- [Postman](https://www.getpostman.com/) || [Thunder Client for VSCode](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client) [Optional]  
+
+## Optional
+- [Postman](https://www.getpostman.com/) || [Thunder Client for VSCode](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client) 
+- [Docker extension for VSCode](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)  
 
 ## Step 1 - Create basic containers with the services
 
