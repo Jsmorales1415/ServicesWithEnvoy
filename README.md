@@ -189,7 +189,7 @@ static_resources:
 ```
 > **Note**: The Envoy's YAML file was taken from the official [Envoy page](https://www.envoyproxy.io/docs/envoy/latest/start/quick-start/configuration-static) but has some changes to ensure the connections with the ports specified in the docker-compose file.
 
-## Step 3 - Compose de dockers
+## Step 3 - Compose the dockers
 
 In this step the containers are going to be composed to deploy just 1 solution with the 3 services (A, B and EnvoyProxy).
 
