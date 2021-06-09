@@ -215,7 +215,10 @@ As this project is running on a local environment, just need to run in your brow
 - Service A (http://localhost:10000/a)
 - Service B (http://localhost:10000/b)
 
-## Extra advice
+## Extra advice for docker version
 The following Youtube link will help you to understand the complete solution with an example. 
 (https://youtu.be/UsoH5cqE1OA)
+
+# DAPR VERSION
+
 
