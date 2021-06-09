@@ -219,6 +219,6 @@ As this project is running on a local environment, just need to run in your brow
 The following Youtube link will help you to understand the complete solution with an example. 
 (https://youtu.be/UsoH5cqE1OA)
 
-# DAPR VERSION
+# KUBERTENES WITH DAPR VERSION
 
 
