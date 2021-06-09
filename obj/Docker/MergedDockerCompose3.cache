@@ -1,0 +1,21 @@
+services:
+  servicea:
+    build:
+      context: /Users/jhonsergiomoralesmontoya/Projects/ServiceA
+      dockerfile: ServiceA/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTPS_PORT: '8081'
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: servicea
+    ports:
+    - published: 8080
+      target: 80
+    - target: 80
+    - published: 8081
+      target: 443
+    - target: 443
+    volumes:
+    - /Users/jhonsergiomoralesmontoya/.aspnet/https:/root/.aspnet/https:ro
+    - /Users/jhonsergiomoralesmontoya/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
+version: '3.4'

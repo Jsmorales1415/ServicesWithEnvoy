@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{876B15C0-4532-4718-A433-F7AC25FC7F3F}|Default">
+  <MonoDevelop.Ide.ItemProperties.ServiceB FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.ServiceA PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="docker-compose.yml">
+    <Files>
+      <File FileName="ServiceA/Controllers/ServiceAController.cs" Line="10" Column="20" />
+      <File FileName="docker-compose.yml" Line="9" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ServiceA" expanded="True">
+            <Node name="docker-compose" expanded="True">
+              <Node name="docker-compose.yml" selected="True" />
+            </Node>
+            <Node name="ServiceA" expanded="True">
+              <Node name="appsettings.json" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

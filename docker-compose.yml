@@ -1,0 +1,38 @@
+version: '3.4'
+services:
+  envoygateway:
+    build: Envoy/
+    ports:
+      - "9901:9901"   #admin port
+      - "10000:10000" #http
+      - "10001:10001" #https
+    volumes:
+      - ./Envoy/envoy.yaml:/etc/envoy/envoy.yaml
+      #SSL certificate use for https
+      #- ./Envoy/server.csr:/etc/ssl/certs/https.crt
+      #- ./Envoy/server.key:/etc/ssl/certs/key.pem
+  servicea:
+    image: ${DOCKER_REGISTRY-}servicea
+    build:
+      context: .
+      dockerfile: ServiceA/Dockerfile
+    ports:
+      - "8080:80"
+      - "8081:443"
+    environment:
+      ASPNETCORE_URLS: "https://+;http://+"
+      ASPNETCORE_HTTPS_PORT: "8081"
+      ASPNETCORE_ENVIRONMENT: "Development"
+  serviceb:
+    image: ${DOCKER_REGISTRY-}serviceb
+    build:
+      context: .
+      dockerfile: ServiceB/Dockerfile
+    ports:
+      - "8082:80"
+      - "8083:443"
+    environment:
+      ASPNETCORE_URLS: "https://+;http://+"
+      ASPNETCORE_HTTPS_PORT: "8083"
+      ASPNETCORE_ENVIRONMENT: "Development"
+

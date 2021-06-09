@@ -1,0 +1,92 @@
+services:
+  envoygateway:
+    build:
+      context: /Users/jhonsergiomoralesmontoya/Projects/ServiceA/Envoy
+    ports:
+    - published: 9901
+      target: 9901
+    - published: 10000
+      target: 10000
+    - published: 10001
+      target: 10001
+    volumes:
+    - /Users/jhonsergiomoralesmontoya/Projects/ServiceA/Envoy/envoy.yaml:/etc/envoy/envoy.yaml:rw
+  servicea:
+    build:
+      context: /Users/jhonsergiomoralesmontoya/Projects/ServiceA
+      dockerfile: ServiceA/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: ServiceA
+      target: base
+    container_name: ServiceA
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTPS_PORT: '8081'
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: ''
+    image: servicea:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net5.0/ServiceA.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - published: 8080
+      target: 80
+    - target: 80
+    - published: 8081
+      target: 443
+    - target: 443
+    tty: true
+    volumes:
+    - /Users/jhonsergiomoralesmontoya/Projects/ServiceA/ServiceA:/app:rw
+    - /Users/jhonsergiomoralesmontoya/vsdbg/vs2017u5:/remote_debugger:rw
+    - /Users/jhonsergiomoralesmontoya/.aspnet/https:/root/.aspnet/https:ro
+    - /Users/jhonsergiomoralesmontoya/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
+    - /Users/jhonsergiomoralesmontoya/.nuget/packages:/root/.nuget/packages:ro
+    - /Users/jhonsergiomoralesmontoya/Projects/ServiceA:/src:rw
+  serviceb:
+    build:
+      context: /Users/jhonsergiomoralesmontoya/Projects/ServiceA
+      dockerfile: ServiceB/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: ServiceB
+      target: base
+    container_name: ServiceB
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTPS_PORT: '8083'
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: ''
+    image: serviceb:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net5.0/ServiceB.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - published: 8082
+      target: 80
+    - target: 80
+    - published: 8083
+      target: 443
+    - target: 443
+    tty: true
+    volumes:
+    - /Users/jhonsergiomoralesmontoya/Projects/ServiceA/ServiceB:/app:rw
+    - /Users/jhonsergiomoralesmontoya/vsdbg/vs2017u5:/remote_debugger:rw
+    - /Users/jhonsergiomoralesmontoya/.aspnet/https:/root/.aspnet/https:ro
+    - /Users/jhonsergiomoralesmontoya/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
+    - /Users/jhonsergiomoralesmontoya/.nuget/packages:/root/.nuget/packages:ro
+    - /Users/jhonsergiomoralesmontoya/Projects/ServiceA:/src:rw
+version: '3.4'

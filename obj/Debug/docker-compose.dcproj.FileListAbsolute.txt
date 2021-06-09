@@ -1,0 +1,16 @@
+/Users/jhonsergiomoralesmontoya/Projects/ServiceA/bin/Debug/ServiceA.deps.json
+/Users/jhonsergiomoralesmontoya/Projects/ServiceA/bin/Debug/ServiceA.runtimeconfig.json
+/Users/jhonsergiomoralesmontoya/Projects/ServiceA/bin/Debug/ServiceA.runtimeconfig.dev.json
+/Users/jhonsergiomoralesmontoya/Projects/ServiceA/bin/Debug/appsettings.Development.json
+/Users/jhonsergiomoralesmontoya/Projects/ServiceA/bin/Debug/appsettings.json
+/Users/jhonsergiomoralesmontoya/Projects/ServiceA/bin/Debug/mono_crash.11a67480d0.0.json
+/Users/jhonsergiomoralesmontoya/Projects/ServiceA/bin/Debug/ServiceA.dll
+/Users/jhonsergiomoralesmontoya/Projects/ServiceA/bin/Debug/ServiceA.pdb
+/Users/jhonsergiomoralesmontoya/Projects/ServiceA/obj/Debug/docker-compose.dcprojAssemblyReference.cache
+/Users/jhonsergiomoralesmontoya/Projects/ServiceA/obj/Debug/docker-compose.dcproj.CoreCompileInputs.cache
+/Users/jhonsergiomoralesmontoya/Projects/ServiceA/obj/Debug/docker-compose.dcproj.CopyComplete
+/Users/jhonsergiomoralesmontoya/Projects/ServiceA/bin/Debug/ServiceB.deps.json
+/Users/jhonsergiomoralesmontoya/Projects/ServiceA/bin/Debug/ServiceB.runtimeconfig.json
+/Users/jhonsergiomoralesmontoya/Projects/ServiceA/bin/Debug/ServiceB.runtimeconfig.dev.json
+/Users/jhonsergiomoralesmontoya/Projects/ServiceA/bin/Debug/ServiceB.dll
+/Users/jhonsergiomoralesmontoya/Projects/ServiceA/bin/Debug/ServiceB.pdb
